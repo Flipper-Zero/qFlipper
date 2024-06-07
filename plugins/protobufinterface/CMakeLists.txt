@@ -1,0 +1,2 @@
+add_library(protobufinterface INTERFACE)
+target_include_directories(protobufinterface INTERFACE .)
