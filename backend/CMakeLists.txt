@@ -6,14 +6,22 @@ file(GLOB BACKEND_SOURCES
     "flipperzero/*/*.cpp"
 )
 
+# Needed for automoc to be run on these files
+list(APPEND BACKEND_AUTOMOC_SOURCES
+    "inputevent.h"
+    "backenderror.h"
+    "flipperzero/deviceinfo.h"
+)
+
 target_sources(backend
     PRIVATE
         ${BACKEND_SOURCES}
+        ${BACKEND_AUTOMOC_SOURCES}
 )
 
 target_include_directories(backend
     PUBLIC
-        "."
+        "${CMAKE_CURRENT_LIST_DIR}"
 )
 
 target_compile_definitions(backend

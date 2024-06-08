@@ -22,8 +22,8 @@ target_sources(dfu
 
 target_include_directories(dfu
     PUBLIC
-        "."
-        "./${USB_BACKEND}"
+        "${CMAKE_CURRENT_LIST_DIR}"
+        "${CMAKE_CURRENT_LIST_DIR}/${USB_BACKEND}"
 )
 
 target_compile_definitions(dfu
