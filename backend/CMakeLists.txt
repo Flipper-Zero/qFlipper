@@ -28,8 +28,8 @@ target_compile_definitions(backend
     PUBLIC
         "-DAPP_NAME=\"${CMAKE_PROJECT_NAME}\""
         "-DAPP_VERSION=\"${GIT_TAG}\""
-        "-DAPP_COMMIT=\"%{GIT_COMMIT}\""
-        "-DAPP_TIMESTAMP=\"${GIT_TIMESTAMP}\""
+        "-DAPP_COMMIT=\"${GIT_COMMIT}\""
+        "-DAPP_TIMESTAMP=${GIT_TIMESTAMP}"
 )
 
 target_link_libraries(backend

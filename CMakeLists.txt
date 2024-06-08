@@ -25,7 +25,18 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 set(CMAKE_AUTOMOC ON)
 
-find_package(Qt6 COMPONENTS Core Core5Compat Network SerialPort REQUIRED CONFIG)
+find_package(Qt6
+    COMPONENTS
+        Core
+        Core5Compat
+        Gui
+        Network
+        SerialPort
+        Qml
+        Quick
+        QuickControls2
+        Widgets
+    REQUIRED CONFIG)
 
 if(NOT CMAKE_SYSTEM_NAME STREQUAL "Windows")
     find_package(PkgConfig REQUIRED)
@@ -37,3 +48,4 @@ add_subdirectory("dfu")
 add_subdirectory("backend")
 add_subdirectory("plugins")
 add_subdirectory("cli")
+add_subdirectory("application")
