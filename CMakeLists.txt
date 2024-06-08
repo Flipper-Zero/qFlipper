@@ -24,16 +24,14 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 set(CMAKE_AUTOMOC ON)
+set(CMAKE_AUTORCC ON)
 
 find_package(Qt6
     COMPONENTS
         Core
         Core5Compat
-        Gui
         Network
         SerialPort
-        Qml
-        Quick
         QuickControls2
         Widgets
     REQUIRED CONFIG)

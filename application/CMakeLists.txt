@@ -1,5 +1,13 @@
 qt_add_executable(${CMAKE_PROJECT_NAME})
 
+qt_add_qml_module(${CMAKE_PROJECT_NAME}
+    URI "."
+    RESOURCES
+        "qml.qrc"
+    RESOURCE_PREFIX
+        ":/"
+)
+
 target_sources(${CMAKE_PROJECT_NAME}
     PRIVATE
         "main.cpp"
@@ -17,9 +25,6 @@ target_link_libraries(${CMAKE_PROJECT_NAME}
     PRIVATE
         dfu
         backend
-        Qt::Gui
-        Qt::Qml
-        Qt::Quick
         Qt::QuickControls2
         Qt::Widgets
 )
