@@ -1,7 +1,10 @@
 cmake_minimum_required(VERSION 3.16)
 project("qFlipper" C CXX)
 
-list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_LIST_DIR}/cmake")
+list(APPEND CMAKE_MODULE_PATH
+    "${CMAKE_CURRENT_LIST_DIR}/cmake"
+    "${CMAKE_CURRENT_LIST_DIR}/3rdparty/nanopb/extra"
+)
 
 include(FindCCache)
 include(VersionInfo)
@@ -35,6 +38,8 @@ find_package(Qt6
         QuickControls2
         Widgets
     REQUIRED CONFIG)
+
+find_package(Nanopb REQUIRED)
 
 if(NOT CMAKE_SYSTEM_NAME STREQUAL "Windows")
     find_package(PkgConfig REQUIRED)

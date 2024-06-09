@@ -1,6 +1,6 @@
 #include "storagerequest.h"
 
-#include "pb_encode.h"
+#include <pb_encode.h>
 
 AbstractStorageRequest::AbstractStorageRequest(uint32_t id, pb_size_t tag, const QByteArray &path, bool hasNext):
     MainRequest(id, tag, hasNext),

@@ -1,6 +1,6 @@
 #include "systemrequest.h"
 
-#include "pb_encode.h"
+#include <pb_encode.h>
 
 SystemRebootRequest::SystemRebootRequest(uint32_t id, PB_System_RebootRequest_RebootMode mode):
     MainRequest(id, PB_Main_system_reboot_request_tag)

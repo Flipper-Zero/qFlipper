@@ -2,7 +2,7 @@
 
 #include <QByteArray>
 
-#include "messages/flipper.pb.h"
+#include <flipper.pb.h>
 
 class MessageWrapper
 {

@@ -1,6 +1,6 @@
 #include "statusrequest.h"
 
-#include "pb_encode.h"
+#include <pb_encode.h>
 
 StatusPingRequest::StatusPingRequest(uint32_t id, const QByteArray &data):
     MainRequest(id, PB_Main_system_ping_request_tag)

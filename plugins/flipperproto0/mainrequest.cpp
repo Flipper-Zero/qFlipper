@@ -1,6 +1,6 @@
 #include "mainrequest.h"
 
-#include "pb_encode.h"
+#include <pb_encode.h>
 
 MainRequest::MainRequest(uint32_t id, pb_size_t tag, bool hasNext):
     m_message({id, PB_CommandStatus_OK, hasNext, {}, tag, {}})

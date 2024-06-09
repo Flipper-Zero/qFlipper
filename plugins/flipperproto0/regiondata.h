@@ -2,8 +2,9 @@
 
 #include <QByteArray>
 
+#include <flipper.pb.h>
+
 #include "bandinfo.h"
-#include "messages/flipper.pb.h"
 
 class RegionData
 {

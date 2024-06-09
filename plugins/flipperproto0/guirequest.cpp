@@ -1,6 +1,6 @@
 #include "guirequest.h"
 
-#include "pb_encode.h"
+#include <pb_encode.h>
 
 GuiStartScreenStreamRequest::GuiStartScreenStreamRequest(uint32_t id):
     MainRequest(id, PB_Main_gui_start_screen_stream_request_tag)

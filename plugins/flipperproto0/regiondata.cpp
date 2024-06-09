@@ -2,7 +2,7 @@
 
 #include <QDebug>
 
-#include "pb_encode.h"
+#include <pb_encode.h>
 
 static bool fieldEncodeCallback(pb_ostream_t *stream, const pb_field_t *field, void * const *arg)
 {
