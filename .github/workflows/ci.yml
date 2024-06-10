@@ -2,11 +2,6 @@ name: 'CI'
 
 on:
   push:
-    branches:
-      - dev
-    tags:
-      - '*'
-  pull_request:
 
 jobs:
   build_linux:
@@ -16,9 +11,8 @@ jobs:
         run: find ./ -mount -maxdepth 1 -exec rm -rf {} \;
 
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
-          fetch-depth: 0
           submodules: true
 
       - name: Set up Docker Buildx
@@ -59,14 +53,13 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0
           submodules: true
 
       - name: Build application
         run: ./build_mac.sh
 
       - name: Publish application
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: qflipper.dmg
           path: |
@@ -82,14 +75,13 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0
           submodules: true
 
       - name: Build application
         run: .\build_windows.bat
 
       - name: Publish application
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: qFlipperSetup-64bit.exe
           path: |
@@ -106,8 +98,6 @@ jobs:
 
       - name: Checkout code
         uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
 
       - name: 'Make artifacts directory'
         run: |
@@ -126,13 +116,13 @@ jobs:
           echo "REF=$(git rev-parse --abbrev-ref HEAD)" >> $GITHUB_ENV
           echo "SUFFIX=$(git rev-parse --abbrev-ref HEAD | sed 's/\//_/g')-$(date +'%d%m%Y')-$(git rev-parse --short HEAD)" >> $GITHUB_ENV
 
-      - uses: actions/download-artifact@v2
+      - uses: actions/download-artifact@v4
         with:
           name: qFlipper-x86_64.AppImage
-      - uses: actions/download-artifact@v2
+      - uses: actions/download-artifact@v4
         with:
           name: qFlipperSetup-64bit.exe
-      - uses: actions/download-artifact@v2
+      - uses: actions/download-artifact@v4
         with:
           name: qflipper.dmg
 
