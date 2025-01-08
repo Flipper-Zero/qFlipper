@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop">
+  <id>one.flipperzero</id>
+  <metadata_license>MIT</metadata_license>
+  <name>qflipper</name>
+  <summary>Flipper Zero firmware updater</summary>
+  <description>
+    <p>qFlipper is a desktop application for updating Flipper Zero
+    firmware.</p>
+    <p>Features include:</p>
+    <ul>
+      <li>Update Flipper's firmware and supplemental data with a press
+      of one button</li>
+      <li>Repair a broken firmware installation</li>
+      <li>Stream Flipper's display and control it remotely</li>
+      <li>Install firmware from a .dfu file</li>
+      <li>Backup and restore settings, progress and pairing data</li>
+      <li>Command line interface</li>
+    </ul>
+  </description>
+  <launchable type="desktop-id">qFlipper.desktop</launchable>
+  <provides>
+    <modalias>usb:v0483p5740d*</modalias>
+    <modalias>usb:v0483pDF11d*</modalias>
+    <modalias>usb:v303Ap40??d*</modalias>
+  </provides>
+</component>
