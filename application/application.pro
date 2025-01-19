@@ -112,7 +112,10 @@ unix:!macx {
     udevfiles.files = $$PWD/../installer-assets/udev/42-flipperzero.rules
     udevfiles.path = $$PREFIX/lib/udev/rules.d
 
-    INSTALLS += target desktopfiles iconfiles udevfiles
+    meta.path = /usr/share/metainfo
+    meta.files += one.flipperzero.qflipper.metainfo.xml
+
+    INSTALLS += target desktopfiles iconfiles udevfiles meta
 
 } else:win32 {
     target.path = $$DESTDIR/$$NAME
